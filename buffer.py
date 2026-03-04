@@ -7,6 +7,9 @@ class RolloutBuffer:
         self.values = []
         self.logprobs = []
 
+    def __len__(self):
+        return len(self.states)
+
     def append(self, state, action, reward, done, value, logprob):
         self.states.append(state)
         self.actions.append(action)
